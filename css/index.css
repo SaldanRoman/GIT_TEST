@@ -7,19 +7,25 @@
     border: 1px solid black;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
 }
 
-.slider-container>.slider-images>a{
-    display: none;
-    transition-duration: 300ms;
+.slider-container .slider-images{
+    overflow: hidden;
+    height: 540px;
+    position: relative;
 }
 
-.slider-container .slider-images a img {
+.slider-container .slider-images img {
     width: 100%;
+    opacity: 0;    
+    transition-duration: 500ms;
+    position: absolute;
+
 }
 
 .slider-container>.slider-images>.visible{
-    display: inline;
+    opacity: 1; 
 }
 
 
