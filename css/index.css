@@ -6,33 +6,36 @@
     max-width: 90%;
     border: 1px solid black;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+
 }
 
-.slider-container .slider-images{
-    overflow: hidden;
-    height: 540px;
-    position: relative;
+.slider-container .slider-images a{
+    display: none;
 }
 
-.slider-container .slider-images img {
+.slider-container .slider-images .display-visible{
+    display: inline;
+}
+
+.slider-container .slider-images a img{
     width: 100%;
-    opacity: 0;    
-    transition-duration: 500ms;
-    position: absolute;
-
+    opacity: 0;
+    transition-duration: 1000ms;
+    
 }
 
-.slider-container>.slider-images>.visible{
-    opacity: 1; 
+.slider-container .slider-images a .image-visible{
+    opacity: 1;
 }
+
+
 
 
 
 .container {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 500px 
 }
 
 .boxes {
