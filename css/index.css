@@ -1,27 +1,54 @@
-    *{
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .container{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .boxes{
-        width: 150px;
-        height: 150px;
-        border: pink solid 3px;
-        margin-left: 4px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .checks{
-        margin-top: 10px;
-    }
-    .checks label, .checks input{
-        cursor: pointer;
-    }
-    .checks form{
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-    }
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.slider-container {
+    max-width: 90%;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: flex;
+}
+
+.slider-container>.slider-images>a{
+    display: none;
+    transition-duration: 300ms;
+}
+
+.slider-container .slider-images a img {
+    width: 100%;
+}
+
+.slider-container>.slider-images>.visible{
+    display: inline;
+}
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.boxes {
+    width: 150px;
+    height: 150px;
+    border: pink solid 3px;
+    margin-left: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checks {
+    margin-top: 10px;
+}
+
+.checks label, .checks input {
+    cursor: pointer;
+}
+
+.checks form {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
