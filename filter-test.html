@@ -5,38 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>filter test</title>
-    <style>
-    *{
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .container{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .boxes{
-        width: 150px;
-        height: 150px;
-        border: pink solid 3px;
-        margin-left: 4px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .checks{
-        margin-top: 10px;
-    }
-    .checks label, .checks input{
-        cursor: pointer;
-    }
-    .checks form{
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    <header>
+        <div class="slider-container">
+            <div class="slider-images">
+            <img src="img/slider/1.jpg" alt="img" class="visible">
+            <img src="img/slider/2.jpg" alt="img">
+            <img src="img/slider/3.jpg" alt="img">
+            </div>
+            <div class="slider-control">
+                <button id="prev">prev</button>
+                <button id="next">next</button>
+            </div>
+        </div>
+    </header>
     <section class="container">
         <div class="boxes" id="d1">1</div>
         <div class="boxes" id="d2">2</div>
@@ -58,13 +42,15 @@
     </form>
     </section>
 
+<script src="js/index.js"></script>
+
 
     <script>
-        let filterForm = document.forms.filter.filterElm.length;
-        console.log(filterForm)
-        document.querySelector('input[type=button]').addEventListener('click', dosomth)
-        function dosomth(){
-        }
+        // let filterForm = document.forms.filter.filterElm.length;
+        // console.log(filterForm)
+        // document.querySelector('input[type=button]').addEventListener('click', dosomth)
+        // function dosomth(){
+        // }
         
     </script>
     
