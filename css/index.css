@@ -1,12 +1,20 @@
 
 .slider-container {
-    max-width: 90%;
-    border: 1px solid black;
+    max-width: 800px;
+    max-height: 500px;
     margin: 0 auto;
     position: relative;
     box-sizing: border-box;
+    overflow: hidden;
 
 }
+
+.slider-images{
+    margin: 0 auto;
+    width: 100%;
+}
+
+
 #sliderButtonPrev, #sliderButtonNext{
     cursor: pointer;
     position: absolute;
@@ -35,8 +43,9 @@
 }
 
 
-
 .slider-container .slider-images a{
+    margin: 0 auto;
+    width: 100%;
     display: none;
 }
 
@@ -46,6 +55,7 @@
 
 .slider-container .slider-images a img{
     width: 100%;
+    height: auto;
     opacity: 0;
     transition-duration: 1000ms;
     
