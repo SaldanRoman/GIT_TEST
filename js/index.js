@@ -1,5 +1,5 @@
-document.querySelector('#next').addEventListener('click', nextImg);
-document.querySelector('#prev').addEventListener('click', prevImg);
+document.querySelector('#sliderButtonNext').addEventListener('click', nextImg);
+document.querySelector('#sliderButtonPrev').addEventListener('click', prevImg);
 
 let linkArr = document.querySelectorAll('.slider-container>.slider-images>a');
 let imgArr = document.querySelectorAll('.slider-container>.slider-images>a>img');
@@ -20,7 +20,6 @@ function nextImg(){
         linkArr[linkCount].classList.remove('display-visible');
         linkArr[linkCount+1].classList.add('display-visible');
         setTimeout(function(){
-            console.log(imgArr[linkCount])
             imgArr[linkCount].classList.remove('image-visible');
             imgArr[linkCount+1].classList.add('image-visible');
             linkCount++
