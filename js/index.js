@@ -53,6 +53,75 @@ function prevImg(){
     }
 }
 
+const arrayOfImages = [
+    {
+        imgSrc: './img/slider/1.jpg',
+        title: '',
+        description: '',
+        buttonText: '',
+        buttonUrl: ''
+    },
+    {
+        imgSrc: './img/slider/2.jpg',
+        title: '',
+        description: '',
+        buttonText: '',
+        buttonUrl: ''
+    },
+    {
+        imgSrc: './img/slider/3.jpg',
+        title: '',
+        description: '',
+        buttonText: '',
+        buttonUrl: ''
+    },
+    {
+        imgSrc: './img/slider/4.jpg',
+        title: '',
+        description: '',
+        buttonText: '',
+        buttonUrl: ''
+    }
+]
+
+function sliderNext() {
+    const leftImg = document.querySelector('.slider-image-item.left');
+    leftImg.remove();
+    const curentImg = document.querySelector('.slider-image-item.current');
+    curentImg.classList.add('left');
+    curentImg.classList.remove('current');
+    const rightImg = document.querySelector('.slider-image-item.right');
+    rightImg.classList.add('current');
+    rightImg.classList.remove('right');
+    const rightImgIndex =  getNextIndex(rightImg, 'right')
+    sliderContainer.appendChild(generateImage(arrayOfImages[rightImgIndex].imgSrc, rightImgIndex, 'slider-image-item right'));
+
+
+}
+
+function getNextIndex (el, direction) {
+const currentIndex = +el.getAttribute('data-index');
+    if(direction==='right'){
+    return arrayOfImages[currentIndex+1] ? currentIndex+1 : 0
+    }
+    return arrayOfImages[currentIndex-1] ? currentIndex-1 : arrayOfImages.length-1
+
+}
+
+function sliderPrevious() {
+    const rightImg = document.querySelector('.slider-image-item.right');
+    rightImg.remove();
+    const curentImg = document.querySelector('.slider-image-item.current');
+    curentImg.classList.add('right');
+    curentImg.classList.remove('current');
+    const leftImg = document.querySelector('.slider-image-item.left');
+    leftImg.classList.add('current');
+    leftImg.classList.remove('left');
+    const leftImgIndex =  getNextIndex(leftImg, 'left');
+    sliderContainer.prepend(generateImage(arrayOfImages[leftImgIndex].imgSrc, leftImgIndex, 'slider-image-item left'));
+
+}
+
 // console.log(imagesWithLinks.length)
 
 // function nextImg(){
@@ -81,3 +150,26 @@ function prevImg(){
 //     }
 // }
 
+function generateImage(src, index, classes) {
+    const image = document.createElement('img');
+    image.setAttribute('src', src);
+    image.setAttribute('data-index', index);
+    image.setAttribute('class', classes);
+    return image
+}
+
+(function () {
+window.sliderContainer =  document.querySelector('.new-slider-img');
+sliderContainer.appendChild(generateImage(arrayOfImages[3].imgSrc, 3, 'slider-image-item left'));
+sliderContainer.appendChild(generateImage(arrayOfImages[0].imgSrc, 0, 'slider-image-item current'));
+sliderContainer.appendChild(generateImage(arrayOfImages[1].imgSrc, 1, 'slider-image-item right'));
+})()
+
+// document.querySelector('#next2').addEventListener('click', function(){
+//     document.querySelectorAll('.new-slider-img a')[0].style.order = '2';
+// })
+
+
+// function generateSliderItem(itemObject, index, classes){
+
+// }
