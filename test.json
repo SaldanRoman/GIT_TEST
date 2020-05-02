@@ -4,7 +4,11 @@
       "age" : 28
     },
     {
-        "name" : "My Litle prity",
+        "name" : "Viti",
         "age" : 24
-    }
+    },
+    {
+      "name" : "Angelina",
+      "age" : 22
+  }
 ]
